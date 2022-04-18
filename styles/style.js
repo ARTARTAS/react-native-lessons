@@ -7,7 +7,7 @@ export const globalStyle = StyleSheet.create({
     paddingTop: 50,
   },
   tittle: {
-    fontSize: 20,
+    fontSize: 25,
     color: "#333",
     fontFamily: "mtBold",
     textAlign: "center",
