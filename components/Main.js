@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { globalStyle } from "./../styles/style";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { Form } from "./Form";
 
 export default function Main({ navigation }) {
   const [news, setNews] = useState([
@@ -33,6 +34,14 @@ export default function Main({ navigation }) {
     },
   ]);
 
+  const addArticle = (article) => {
+    setNews((list) => {
+      article.key = Math.random().toString();
+      return [article, ...list];
+    });
+    setModalWindow(false);
+  };
+
   const [modalWindow, setModalWindow] = useState(false);
   return (
     <View style={globalStyle.main}>
@@ -46,8 +55,10 @@ export default function Main({ navigation }) {
             onPress={() => setModalWindow(false)}
           />
           <Text style={Styles.tittle}>Добавить статью</Text>
+          <Form addArticle={addArticle} />
         </View>
       </Modal>
+
       <Ionicons
         style={Styles.iconAdd}
         name="add-circle-sharp"
