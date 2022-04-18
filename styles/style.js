@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export const globalStyle = StyleSheet.create({
   main: {
     flex: 1,
-    padding: 20,
-    paddingTop: 50,
+    padding: 10,
+    paddingTop: 20,
   },
   tittle: {
     fontSize: 25,

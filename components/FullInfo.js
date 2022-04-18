@@ -6,7 +6,7 @@ export default function FullInfo({ route, navigation }) {
   return (
     <View style={globalStyle.main}>
       <Image
-        style={Styles.stretch}
+        style={Styles.image}
         source={{
           width: "100%",
           height: 120,
@@ -33,7 +33,7 @@ const Styles = StyleSheet.create({
     marginTop: 20,
     color: "black",
   },
-  stretch: {
+  image: {
     width: "auto",
     height: 200,
     resizeMode: "stretch",

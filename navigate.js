@@ -18,7 +18,6 @@ export default function Navigate() {
             title: "Главная",
             headerStyle: {
               backgroundColor: "#eb5d3d",
-              height: 100,
             },
             headerTitleStyle: {
               color: "white",

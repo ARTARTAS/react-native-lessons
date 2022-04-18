@@ -6,8 +6,10 @@ import {
   FlatList,
   Image,
   StyleSheet,
+  Modal,
 } from "react-native";
 import { globalStyle } from "./../styles/style";
+import { Ionicons, AntDesign } from "@expo/vector-icons";
 
 export default function Main({ navigation }) {
   const [news, setNews] = useState([
@@ -31,8 +33,28 @@ export default function Main({ navigation }) {
     },
   ]);
 
+  const [modalWindow, setModalWindow] = useState(false);
   return (
     <View style={globalStyle.main}>
+      <Modal visible={modalWindow}>
+        <View style={globalStyle.main}>
+          <AntDesign
+            style={Styles.iconClose}
+            name="closecircle"
+            size={30}
+            color="red"
+            onPress={() => setModalWindow(false)}
+          />
+          <Text style={Styles.tittle}>Добавить статью</Text>
+        </View>
+      </Modal>
+      <Ionicons
+        style={Styles.iconAdd}
+        name="add-circle-sharp"
+        size={30}
+        color="green"
+        onPress={() => setModalWindow(true)}
+      />
       <Text style={[globalStyle.tittle, Styles.header]}>Статьи</Text>
       <FlatList
         data={news}
@@ -43,10 +65,8 @@ export default function Main({ navigation }) {
               onPress={() => navigation.navigate("FullInfo", item)}
             >
               <Image
-                style={Styles.stretch}
+                style={Styles.image}
                 source={{
-                  width: "100%",
-                  height: 200,
                   uri: item.img,
                 }}
               />
@@ -66,6 +86,13 @@ export default function Main({ navigation }) {
 }
 
 const Styles = StyleSheet.create({
+  iconClose: {
+    textAlign: "center",
+  },
+  iconAdd: {
+    textAlign: "center",
+    marginBottom: 15,
+  },
   header: {
     fontSize: 30,
     marginBottom: 30,
@@ -88,7 +115,7 @@ const Styles = StyleSheet.create({
     marginTop: 5,
     color: "#474747",
   },
-  stretch: {
+  image: {
     width: "auto",
     height: 200,
     resizeMode: "stretch",
