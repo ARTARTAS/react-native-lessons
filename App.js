@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
+import "react-native-gesture-handler";
 
-import Main from "./components/Main";
+import Navigate from "./navigate";
 
 const fonts = () =>
   Font.loadAsync({
@@ -13,13 +14,13 @@ const fonts = () =>
 export default function App() {
   const [font, setFont] = useState(false);
   if (font) {
-    return <Main />;
+    return <Navigate />;
   } else {
     return (
       <AppLoading
         startAsync={fonts}
         onFinish={() => setFont(true)}
-        onError={(error) => console.log(error)}
+        onError={console.warn}
       />
     );
   }
