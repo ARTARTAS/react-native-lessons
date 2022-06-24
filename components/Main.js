@@ -109,8 +109,14 @@ const Styles = StyleSheet.create({
     marginBottom: 30,
   },
   item: {
-    width: "100%",
+    width: 250,
+    marginLeft: "auto",
+    marginRight: "auto",
     marginBottom: 30,
+    borderWidth: 2,
+    borderColor: "gray",
+    borderRadius: 5,
+    padding: 10,
   },
   tittle: {
     fontFamily: "mtBold",
