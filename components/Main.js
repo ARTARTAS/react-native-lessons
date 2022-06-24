@@ -37,7 +37,7 @@ export default function Main({ navigation }) {
   const addArticle = (article) => {
     setNews((list) => {
       article.key = Math.random().toString();
-      return [article, ...list];
+      return [...list, article];
     });
     setModalWindow(false);
   };
@@ -59,13 +59,6 @@ export default function Main({ navigation }) {
         </View>
       </Modal>
 
-      <Ionicons
-        style={Styles.iconAdd}
-        name="add-circle-sharp"
-        size={30}
-        color="green"
-        onPress={() => setModalWindow(true)}
-      />
       <Text style={[globalStyle.tittle, Styles.header]}>Статьи</Text>
       <FlatList
         data={news}
@@ -87,6 +80,13 @@ export default function Main({ navigation }) {
           );
         }}
         keyExtractor={(item, index) => index.toString()}
+      />
+      <Ionicons
+        style={Styles.iconAdd}
+        name="add-circle-sharp"
+        size={30}
+        color="green"
+        onPress={() => setModalWindow(true)}
       />
       {/* <Button
         title="Открыть страницу Contacts"
