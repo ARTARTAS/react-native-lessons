@@ -41,7 +41,7 @@ export const Form = ({ addArticle }) => {
           <TextInput
             style={Styles.input}
             value={values.img}
-            placeholder="Картинка"
+            placeholder="URL Картинки"
             onChangeText={handleChange("img")}
           />
           <Button title="Добавить" onPress={handleSubmit} />
