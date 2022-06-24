@@ -127,8 +127,10 @@ const Styles = StyleSheet.create({
     color: "#474747",
   },
   image: {
-    width: "auto",
-    height: 200,
-    resizeMode: "stretch",
+    width: 100,
+    height: 100,
+    resizeMode: "contain",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 });
